@@ -1,0 +1,19 @@
+.feature-container {
+    padding: 20px; /* Add padding for spacing */
+  }
+  
+  .feature-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px; /* Adjust font size as needed */
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .feature-image img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 500px; /* Limit the height to prevent overflow */
+    object-fit: cover; /* Ensure the image covers the area properly */
+  }
+  
