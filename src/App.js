@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Feature from './components/Feature';
+import Feature1 from './components/Feature1';
+import Feature2 from './components/Feature2';
+import Feature3 from './components/Feature3';
+import Founder from './components/Founder';
+import FAQ from './components/FAQ';
+import Footer from './components/Footer';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container-fluid">
+      <Navbar/>
+      <Home/>
+      <Feature/>
+      <Feature1/>
+      <Feature2/>
+      <Feature3/>
+      <Founder/>
+      <FAQ/>
+      <Footer/>
+
     </div>
   );
 }

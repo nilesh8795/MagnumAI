@@ -216,3 +216,58 @@
     font-size: 12px;
   }
 }
+/* Home.css */
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  align-items: stretch; /* Ensures both columns have the same height */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.col-md-5,
+.col-sm-4 {
+  flex: 1; /* Ensure both columns take equal space */
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove padding */
+}
+
+img {
+  max-width: 100%;
+  height: 450;
+}
+
+.text-md-start {
+  margin-top: 0;
+}
+
+.p-4 {
+  padding: 0 !important; /* Ensure no padding in right column */
+}
+
+.toggle-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.collapse-content {
+  display: none;
+}
+
+.collapse-content.show {
+  display: block;
+}
+
+/* Remove margin from other containers below this */
+.connected-container {
+  margin: 0;
+  padding: 0;
+}

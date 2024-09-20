@@ -73,13 +73,13 @@ export default function Home() {
             {/* Centered Button */}
             <div className="row mt-4">
               <div className="d-flex justify-content-center">
-                <button
-                  className="rounded-pill bg-success text-center d-flex justify-content-center align-items-center py-3 px-4 text-light fw-bold"
-                  style={{ width: '180px', fontSize: '16px' , fontFamily: 'sans-serif', border: 'none', margin: 'auto'}}
+              <button
+                  className="rounded-pill text-center d-flex justify-content-center align-items-center py-3 px-4 text-light fw-bold"
+                  style={{ backgroundColor: '#6366F1', width: '180px', fontSize: '16px', fontFamily: 'sans-serif', border: 'none', margin: 'auto' }}
                 >
                   Talk to August
                 </button>
-              </div>
+                </div>
             </div>
           </div>
           </div>

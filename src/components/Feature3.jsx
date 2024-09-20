@@ -55,7 +55,7 @@ export default function Feature3() {
 
   return (
     <div ref={featureRef}>
-    <div className="row" style={{ background: '#fff6d7', margin: '0' }}>
+    <div className="row" style={{ background: '#A5B4FC', margin: '0' }}>
       {/* Text Column */}
       <div className={`col-md-8 d-flex align-items-center justify-content-center ${isInView ? 'animate__animated animate__fadeInLeft' : ''}`}>
         <div className="text-center">

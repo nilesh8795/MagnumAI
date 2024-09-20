@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import 'animate.css';
+
 export default function Feature1() {
   const [isSecurityExpanded, setIsSecurityExpanded] = useState(false);
   const [isAlertExpanded, setIsAlertExpanded] = useState(false);
@@ -53,7 +54,7 @@ export default function Feature1() {
   };
 
   return (
-    <div className="row" style={{ background: '#fff6d7'}} ref={featureRef}>
+    <div className="row" style={{ background: '#A5B4FC'}} ref={featureRef}>
       {/* Text Column */}
       <div className={`col-md-8 d-flex align-items-center justify-content-center p-4 ${isInView ? 'animate__animated animate__fadeInLeft' : ''}`}>
         <div className="text-center">
@@ -100,7 +101,7 @@ export default function Feature1() {
               className="btn btn-link p-0 text-start text-dark toggle-button"
               onClick={handleAlertsToggle}
             >
-              <div className="col-sm-6 fw-bold" style={{fontSize: '20px', fontFamily: 'inherit'}}>Proactive alerts and suggestions</div>
+              <div className="col-sm-7 fw-bold" style={{fontSize: '20px', fontFamily: 'inherit'}}>Proactive alerts and suggestions</div>
               <div className="col-sm-2">
                 <img
                   src={
