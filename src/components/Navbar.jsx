@@ -10,11 +10,14 @@ export default function MyComponent() {
         <div className="col-sm-4 d-flex justify-content-center align-items-center">
           <img src={Magnumlogo} alt="Magnum Logo" style={{ width: '150px' }} />
         </div>
-        <div className="col-sm-4 d-flex justify-content-center align-items-center">
-          <b> About</b>
+        <div className="col-sm-4 d-flex justify-content-center align-items-center text-sm-center text-md-end">
+          <span className="d-block about">About</span>
         </div>
-        <div className="col-sm-4 d-flex justify-content-center align-items-center">
-          <button className='rounded-pill py-2 px-3 text-light fw-bold' style={{ backgroundColor: '#6366F1', border: 'none' }}>Talk to agust</button>
+        {/* Hide this column on screen sizes below 576px */}
+        <div className="col-sm-4 d-none d-sm-flex justify-content-center align-items-center">
+          <button className='rounded-pill py-2 px-3 text-light fw-bold d-none d-md-block' style={{ backgroundColor: '#6366F1', border: 'none' }}>
+            Talk to agust
+          </button>
         </div>
       </div>
     </div>

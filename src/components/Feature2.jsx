@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import 'animate.css';
 
-export default function Feature2() {
-  const [isCostExpanded, setIsCostExpanded] = useState(false);
-  const [isIntegrationExpanded, setIsIntegrationExpanded] = useState(false);
-  const [isDicisionsExpanded, setIsDicisionsExpanded] = useState(false);
+export default function Feature3() {
+  const [isSecurityExpanded, setIsSecurityExpanded] = useState(false);
+  const [isAlertExpanded, setIsAlertExpanded] = useState(false);
+  const [isLabExpanded, setIsLabExpanded] = useState(false);
   const [imageSrc, setImageSrc] = useState(
-    'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-3-1-1010x1024.webp'
+    'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-1-1-1010x1024.webp'
   );
 
   const [isInView, setIsInView] = useState(false);
@@ -26,114 +26,132 @@ export default function Feature2() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleCostToggle = () => {
-    setIsCostExpanded(!isCostExpanded);
+  const handleSecurityToggle = () => {
+    setIsSecurityExpanded(!isSecurityExpanded);
     setImageSrc(
-      'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-3-1-1010x1024.webp'
+      'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-1-1-1010x1024.webp'
     );
-    setIsIntegrationExpanded(false);
-    setIsDicisionsExpanded(false);
+    setIsAlertExpanded(false);
+    setIsLabExpanded(false);
   };
 
-  const handleIntegrationToggle = () => {
-    setIsIntegrationExpanded(!isIntegrationExpanded);
+  const handleAlertsToggle = () => {
+    setIsAlertExpanded(!isAlertExpanded);
     setImageSrc(
-      'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-3-2-1010x1024.webp'
+      'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-1-2-1010x1024.webp'
     );
-    setIsCostExpanded(false);
-    setIsDicisionsExpanded(false);
+    setIsSecurityExpanded(false);
+    setIsLabExpanded(false);
   };
 
-  const handleDicisionsToggle = () => {
-    setIsDicisionsExpanded(!isDicisionsExpanded);
+  const handleLabToggle = () => {
+    setIsLabExpanded(!isLabExpanded);
     setImageSrc(
-      'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-3-3-1010x1024.webp'
+      'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-1-3-1010x1024.webp'
     );
-    setIsCostExpanded(false);
-    setIsIntegrationExpanded(false);
+    setIsSecurityExpanded(false);
+    setIsAlertExpanded(false);
   };
 
   return (
-      <div style={{ marginTop: '150px', marginBottom: '0' }} ref={featureRef}>
-        <div className="row">
-          <div className={`col-sm-12 col-md-5 text-center text-md-start ${isInView ? 'animate__animated animate__fadeInLeft' : ''}`} style={{ marginRight: '150px' }}>
-            <img
-              src={imageSrc}
-              alt="Healthcare"
-              className="img-fluid"
-              style={{ maxWidth: '100%' }}
-            />
-          </div>
-          <div className={`col-sm-4  p-4 text-center text-md-start ${isInView ? 'animate__animated animate__fadeInRight' : ''}`}>
-          <div className="row fs-1 fw-bold" style={{ marginTop: '50px', fontFamily: 'Roboto', lineHeight: '1.2' }}>
-              Go live 2x faster, make <br /> informed decisions
+    <div ref={featureRef}>
+      <div className="row">
+        {/* Image Column */}
+        <div className={`col-md-4 p-0 d-flex justify-content-center align-items-center ${isInView ? 'animate__animated animate__fadeInLeft' : ''}`}>
+          <img
+            src={imageSrc}
+            alt="Healthcare journey illustration"
+            style={{ width: '100%', height: 'auto', maxWidth: '100%', marginTop: '50px' }}
+          />
+        </div>
+
+        {/* Text Column */}
+        <div className={`col-md-8 d-flex align-items-center justify-content-center ${isInView ? 'animate__animated animate__fadeInRight' : ''}`}>
+          <div className="text-center">
+            <div className="row text-start fs-2 fw-bold">
+              <h2>
+                Secure patient data with <br /> robust compliance <br /> measures
+              </h2>
+            </div>
+            <div className="row text-start">
+              <p>
+                Don’t compromise on data privacy and security to earn patients’ trust. Yellow.ai has <br /> got you covered with ISO, HIPAA, SOC2, GDPR, and PDPA compliance.
+              </p>
             </div>
 
-            <div className="row">
-            Stop building healthcare support agents from scratch, and digging data to make <br /> decisions. Deploy easy-to-use AI in seconds and improve performance by tracking <br /> metrics.
-            </div>
-
-            {/* Collapsible Section for Appointment booking */}
+            {/* Toggle Buttons */}
             <div className="row">
               <button
                 className="btn btn-link p-0 text-start text-dark toggle-button"
-                onClick={handleCostToggle}
+                onClick={handleSecurityToggle}
               >
-                <div className="fw-bold col-sm-10" style={{ fontSize: '20px', fontFamily: 'inherit' }}>60% operational costs reduction</div>
-                <div>
+                <div className="col-sm-8 fw-bold" style={{ fontSize: '20px', fontFamily: 'inherit' }}>Appointment booking and rescheduling</div>
+                <div className="col-sm-2">
                   <img
-                    src={isCostExpanded ? "https://cdn-icons-png.flaticon.com/512/262/262039.png" : "https://cdn-icons-png.flaticon.com/128/3024/3024515.png"}
-                    alt={isCostExpanded ? "Minus icon" : "Plus icon"}
+                    src={
+                      isSecurityExpanded
+                        ? 'https://cdn-icons-png.flaticon.com/512/262/262039.png'
+                        : 'https://cdn-icons-png.flaticon.com/128/3024/3024515.png'
+                    }
+                    alt={isSecurityExpanded ? 'Minus icon' : 'Plus icon'}
                     className="toggle-icon"
                   />
                 </div>
               </button>
-              <div className={`collapse-content ${isCostExpanded ? 'show' : 'hide'} text-start`}>
-              Go live 2x faster with 40% faster implementation. Avoid the need <br /> for coding or NLP training.
+              <div className={`row collapse-content ${isSecurityExpanded ? 'animate__animated animate__fadeIn show' : 'animate__animated animate__fadeOut hide'} text-start`}>
+              Automate booking and updation of appointments <br /> and lab tests. Free up healthcare agents for high-value tasks.
               </div>
             </div>
 
-            {/* Collapsible Section for Human-like voice */}
-            <div className="row" style={{marginTop: '50px'}}>
-              <button
-                className="btn btn-link p-0 text-start text-dark toggle-button"
-                onClick={handleIntegrationToggle}
-              >
-                <div className="fw-bold col-sm-10" style={{ fontSize: '20px', fontFamily: 'inherit' }}>Hassle-free system integration</div>
-                <div>
-                  <img
-                    src={isIntegrationExpanded ? "https://cdn-icons-png.flaticon.com/512/262/262039.png" : "https://cdn-icons-png.flaticon.com/128/3024/3024515.png"}
-                    alt={isIntegrationExpanded ? "Minus icon" : "Plus icon"}
-                    className="toggle-icon"
-                  />
-                </div>
-              </button>
-              <div className={`collapse-content ${isIntegrationExpanded ? 'show' : 'hide'} text-start`}>
-              Get 150+ pre-built templates with healthcare terms. Enable <br /> flexible integration with 80% containment out of the box.
-              </div>
-            </div>
-
-            {/* Collapsible Section for Secure billing and payments */}
             <div className="row">
               <button
                 className="btn btn-link p-0 text-start text-dark toggle-button"
-                onClick={handleDicisionsToggle}
+                onClick={handleAlertsToggle}
               >
-                <div className="fw-bold col-sm-10" style={{ fontSize: '20px', fontFamily: 'inherit' }}>Data-driven decisions</div>
-                <div>
+                <div className="col-sm-8 fw-bold" style={{ fontSize: '20px', fontFamily: 'inherit' }}>Human-like voice interactions </div>
+                <div className="col-sm-2">
                   <img
-                    src={isDicisionsExpanded ? "https://cdn-icons-png.flaticon.com/512/262/262039.png" : "https://cdn-icons-png.flaticon.com/128/3024/3024515.png"}
-                    alt={isDicisionsExpanded ? "Minus icon" : "Plus icon"}
+                    src={
+                      isAlertExpanded
+                        ? 'https://cdn-icons-png.flaticon.com/512/262/262039.png'
+                        : 'https://cdn-icons-png.flaticon.com/128/3024/3024515.png'
+                    }
+                    alt={isAlertExpanded ? 'Minus icon' : 'Plus icon'}
                     className="toggle-icon"
                   />
                 </div>
               </button>
-              <div className={`collapse-content ${isDicisionsExpanded ? 'show' : 'hide'} text-start`}>
-                  Collect feedback with CSAT and NPS surveys. Help agents improve  <br /> service with chat summaries via AI omnichannel agent inbox.
+              <div className={`row collapse-content ${isAlertExpanded ? 'animate__animated animate__fadeIn show' : 'animate__animated animate__fadeOut hide'} text-start`}>
+              Automate booking and updation of appointments and lab tests. Free <br />
+              up healthcare agents for high-value tasks.
+              </div>
+            </div>
+
+            <div className="row">
+              <button
+                className="btn btn-link p-0 text-start text-dark toggle-button"
+                onClick={handleLabToggle}
+              >
+                <div className="col-sm-8 fw-bold" style={{ fontSize: '20px', fontFamily: 'inherit' }}>Secure billing and payments</div>
+                <div className="col-sm-2">
+                  <img
+                    src={
+                      isLabExpanded
+                        ? 'https://cdn-icons-png.flaticon.com/512/262/262039.png'
+                        : 'https://cdn-icons-png.flaticon.com/128/3024/3024515.png'
+                    }
+                    alt={isLabExpanded ? 'Minus icon' : 'Plus icon'}
+                    className="toggle-icon"
+                  />
+                </div>
+              </button>
+              <div className={`row collapse-content ${isLabExpanded ? 'animate__animated animate__fadeIn show' : 'animate__animated animate__fadeOut hide'} text-start`}>
+              Tackle interruptions with empathy using voice AI agents, <br />adept in active listening. Transfer complex queries to live agents.
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
   );
 }
