@@ -13,16 +13,16 @@ export default function Feature() {
 
   const faqs = [
     {
-      question: '    What is healthcare support efficiency?',
-      answer: 'Healthcare support efficiency refers to the ability to manage and resolve patient inquiries and issues effectively and swiftly.'
+      question: 'Appointment booking and rescheduling',
+      answer: 'Automate booking and updation of appointments and lab tests. Free up healthcare agents for high-value tasks.'
     },
     {
-      question: '    How can self-service reduce query volume?',
-      answer: 'Self-service allows patients to find answers to common questions on their own, significantly decreasing the number of inquiries handled by support staff.'
+      question: 'Human-like voice interactions',
+      answer: 'Tackle interruptions with empathy using voice AI agents, adept in active listening. Transfer complex queries to live agents.'
     },
     {
-      question: 'What languages are supported?',
-      answer: 'Our system supports over 135 languages to ensure personalized interactions for all users.'
+      question: 'Secure billing and payments',
+      answer: 'Streamline invoicing, billing, and reimbursements with smooth integration with existing payment solutions.'
     },
   ];
 
@@ -43,7 +43,7 @@ export default function Feature() {
           </div>
         </div>
         <div className="col-md-6 p-0">
-          <div className="row" style={{ marginTop: '200px' }}>
+          <div className="row" style={{ marginTop: '100px' }}>
             <div className="row">
               <div className="col-sm-6">
                 <h2>Boost healthcare support efficiency with human-like empathy</h2>
@@ -55,7 +55,7 @@ export default function Feature() {
                 {faqs.map((faq, index) => (
                   <div key={index}>
                     <button 
-                      className="row align-items-center btn my-4 text-start fs-4 fw-bold faq-question" 
+                      className="row align-items-center btn text-start fs-6 fw-bold faq-question" 
                       onClick={() => toggleText(index)}
                     >
                       <div className="d-flex align-items-center">
@@ -66,11 +66,11 @@ export default function Feature() {
                           alt={activeIndex === index ? 'Minus icon' : 'Plus icon'}
                           style={{ width: '24px', height: '24px', marginRight: '10px' }} // Adjusted margin between icon and question
                         />
-                        <span className="question">{faq.question}</span>
+                        <span className="question" style={{background: 'none'}}>{faq.question}</span>
                       </div>
                     </button>
                     {activeIndex === index && (
-                      <p className="col-sm-10 faq-answer" style={{ marginLeft: '40px' }}>{faq.answer}</p>
+                      <p className="col-sm-10 faq-answer" style={{ marginLeft: '60px' }}>{faq.answer}</p>
                     )}
                   </div>
                 ))}

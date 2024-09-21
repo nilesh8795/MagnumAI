@@ -1,159 +1,85 @@
-import React, { useState, useEffect, useRef } from 'react';
-import 'animate.css';
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Feature1.css';
 
 export default function Feature1() {
-  const [isSecurityExpanded, setIsSecurityExpanded] = useState(false);
-  const [isAlertExpanded, setIsAlertExpanded] = useState(false);
-  const [isLabExpanded, setIsLabExpanded] = useState(false);
-  const [imageSrc, setImageSrc] = useState(
-    'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-2-1-1010x1024.webp'
-  );
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  const [isInView, setIsInView] = useState(false);
-  const featureRef = useRef(null);
+  const images = [
+    'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-2-1-1010x1024.webp',
+    'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-2-2-1010x1024.webp',
+    'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-2-3-1010x1024.webp',
+  ];
 
-  // Scroll animation handler
-  useEffect(() => {
-    const handleScroll = () => {
-      const topPos = featureRef.current?.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      if (topPos < windowHeight - 100) {
-        setIsInView(true);
-      }
-    };
+  const faqs = [
+    {
+      question: 'Seamless patient onboarding',
+      answer: 'Automate the registration, verification, and new account creation of patients..'
+    },
+    {
+      question: 'Proactive alerts and suggestions',
+      answer: 'Share medication reminders and preventive care, nutrition, and health tips based on previous chat history and test results.'
+    },
+    {
+      question: 'Post-consultation summary and lab results',
+      answer: 'Send a digital summary of prescription, diagnosis, and lab reports on the channel of patients’ choice.'
+    },
+  ];
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleSecurityToggle = () => {
-    setIsSecurityExpanded(!isSecurityExpanded);
-    setImageSrc(
-      'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-2-1-1010x1024.webp'
-    );
-    setIsAlertExpanded(false);
-    setIsLabExpanded(false);
-  };
-
-  const handleAlertsToggle = () => {
-    setIsAlertExpanded(!isAlertExpanded);
-    setImageSrc(
-      'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-2-2-1010x1024.webp'
-    );
-    setIsSecurityExpanded(false);
-    setIsLabExpanded(false);
-  };
-
-  const handleLabToggle = () => {
-    setIsLabExpanded(!isLabExpanded);
-    setImageSrc(
-      'https://yellow.ai/wp-content/uploads/2024/06/healthcare-inline-img-2-3-1010x1024.webp'
-    );
-    setIsSecurityExpanded(false);
-    setIsAlertExpanded(false);
+  const toggleText = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
-    <div className="row" style={{ background: '#A5B4FC'}} ref={featureRef}>
-      {/* Text Column */}
-      <div className={`col-md-8 d-flex align-items-center justify-content-center p-4 ${isInView ? 'animate__animated animate__fadeInLeft' : ''}`}>
-        <div className="text-center">
-          <div className="row text-start fs-2 fw-bold">
-            <h2>
-              Win patient loyalty with <br /> connected healthcare <br /> journeys
-            </h2>
-          </div>
-          <div className="row text-start">
-            <p>
-              Prevent patient churns. Help them find nearby clinics, book virtual consultations,
-              <br /> and enable post-consultation follow-ups, capturing context across 35+
-              channels.
-            </p>
-          </div>
-  
-          {/* Toggle Buttons */}
-          <div className="row">
-            <button
-              className="btn btn-link p-0 text-start text-dark toggle-button"
-              onClick={handleSecurityToggle}
-            >
-              <div className="col-sm-6 fw-bold" style={{fontSize: '20px', fontFamily: 'inherit'}}>Enterprise-grade security</div>
-              <div className="col-sm-2">
-                <img
-                  src={
-                    isSecurityExpanded
-                      ? 'https://cdn-icons-png.flaticon.com/512/262/262039.png'
-                      : 'https://cdn-icons-png.flaticon.com/128/3024/3024515.png'
-                  }
-                  alt={isSecurityExpanded ? 'Minus icon' : 'Plus icon'}
-                  className="toggle-icon"
-                />
-              </div>
-            </button>
-            <div className={`row collapse-content ${isSecurityExpanded ? 'animate__animated animate__fadeIn show' : 'animate__animated animate__fadeOut hide'} text-start`}>
-              Automate the registration, verification, and <br />
-              new account creation of patients.
+    <div className="container-fluid p-0 m-0" style={{ maxHeight: '80vh', backgroundColor: '#A5B4FC' }}>
+      <div className="row g-0">
+        {/* First column: Text */}
+        <div className="col-md-6 p-0 main-left">
+          <div className="row ">
+            <div className="col-sm-8">
+              <h2 className='left-column'>Win patient loyalty with connected healthcare journeys</h2>
+              <p className="mt4 left-column">Prevent patient churns. Help them find nearby clinics, book virtual consultations, and enable post-consultation follow-ups, capturing context across 35+ channels.</p>
             </div>
           </div>
-  
           <div className="row">
-            <button
-              className="btn btn-link p-0 text-start text-dark toggle-button"
-              onClick={handleAlertsToggle}
-            >
-              <div className="col-sm-7 fw-bold" style={{fontSize: '20px', fontFamily: 'inherit'}}>Proactive alerts and suggestions</div>
-              <div className="col-sm-2">
-                <img
-                  src={
-                    isAlertExpanded
-                      ? 'https://cdn-icons-png.flaticon.com/512/262/262039.png'
-                      : 'https://cdn-icons-png.flaticon.com/128/3024/3024515.png'
-                  }
-                  alt={isAlertExpanded ? 'Minus icon' : 'Plus icon'}
-                  className="toggle-icon"
-                />
-              </div>
-            </button>
-            <div className={`row collapse-content ${isAlertExpanded ? 'animate__animated animate__fadeIn show' : 'animate__animated animate__fadeOut hide'} text-start`}>
-              Share medication reminders and preventive care, nutrition, and <br />
-              health tips based on previous chat history and test results.
-            </div>
-          </div>
-  
-          <div className="row">
-            <button
-              className="btn btn-link p-0 text-start text-dark toggle-button"
-              onClick={handleLabToggle}
-            >
-              <div className="col-sm-6 fw-bold" style={{fontSize: '20px', fontFamily: 'inherit'}}>Advanced lab reports</div>
-              <div className="col-sm-2">
-                <img
-                  src={
-                    isLabExpanded
-                      ? 'https://cdn-icons-png.flaticon.com/512/262/262039.png'
-                      : 'https://cdn-icons-png.flaticon.com/128/3024/3024515.png'
-                  }
-                  alt={isLabExpanded ? 'Minus icon' : 'Plus icon'}
-                  className="toggle-icon"
-                />
-              </div>
-            </button>
-            <div className={`row collapse-content ${isLabExpanded ? 'animate__animated animate__fadeIn show' : 'animate__animated animate__fadeOut hide'} text-start`}>
-              Send a digital summary of prescription, diagnosis, and lab reports <br />
-              on the channel of patients’ choice.
+            <div className="col-sm-8">
+              {faqs.map((faq, index) => (
+                <div key={index}>
+                  <button 
+                    className="row align-items-center btn text-start fs-4 fw-bold faq-question left-column" 
+                    onClick={() => toggleText(index)}
+                  >
+                    <div className="d-flex align-items-center">
+                      <img
+                        src={activeIndex === index 
+                          ? 'https://cdn-icons-png.flaticon.com/512/262/262039.png' 
+                          : 'https://cdn-icons-png.flaticon.com/128/3024/3024515.png'}
+                        alt={activeIndex === index ? 'Minus icon' : 'Plus icon'}
+                        style={{ width: '24px', height: '24px', marginRight: '10px' }}
+                      />
+                      <span className="question" style={{ background: 'none' }}>{faq.question}</span>
+                    </div>
+                  </button>
+                  {activeIndex === index && (
+                    <p className="col-sm-10 faq-answer main-left"  >{faq.answer}</p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
-  
-      {/* Image Column */}
-      <div className={`col-md-4 p-0 d-flex justify-content-center align-items-center ${isInView ? 'animate__animated animate__fadeInRight' : ''}`}>
-        <img
-          src={imageSrc} // Use dynamic image source
-          alt="Healthcare journey illustration"
-          style={{ width: '100%', height: 'auto', maxWidth: '100%', marginTop: '50px' }}
-        />
+        
+        {/* Second column: Image */}
+        <div className="col-sm-4">
+          <div className="col-md-8 p-0 d-flex justify-content-center align-items-center" style={{ height: '80vh' }}>
+            <img 
+              src={activeIndex !== null ? images[activeIndex] : images[0]} 
+              alt="Feature"
+              style={{ width: '100%', height: 'auto', maxWidth: '100%', marginTop: '50px', marginLeft: '100%' }}
+            />
+          </div>
+        </div>
       </div>
     </div>
-    );
+  );
 }

@@ -1,0 +1,29 @@
+/* Global Styles */
+.container-fluid {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .custom-img {
+    object-fit: cover; /* Ensures the image maintains aspect ratio while covering */
+  }
+  .left-column {
+    margin-left: 200px;
+  }
+  
+  @media (max-width: 768px) {
+    .left-column {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .fab-question {
+        padding: 0%;
+    }
+    .faq-answer {
+        margin-left: 50px;
+    }
+    .main-left {
+        font-size: small;
+    }
+  }
+  
