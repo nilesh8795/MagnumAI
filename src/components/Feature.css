@@ -1,19 +1,9 @@
-.collapse-content {
-  overflow: hidden;
-  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-  opacity: 0;
-  max-height: 0; /* Initially collapsed */
+/* Global Styles */
+.container-fluid {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.collapse-content.expanded {
-  opacity: 1;
-  max-height: 100px; /* Adjust based on content height */
-}
-
-.collapse-text {
-  padding: 10px 0; /* Optional padding for the text */
-}
-
-.mt-3 {
-  margin-top: 1rem; /* Adjust as needed for spacing */
+.custom-img {
+  object-fit: cover; /* Ensures the image maintains aspect ratio while covering */
 }
