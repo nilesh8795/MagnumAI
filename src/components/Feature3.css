@@ -13,6 +13,10 @@
   .main-left {
     margin-top: 50px;
   }
+  .left-column-answer {
+    margin-left: 250px;
+  }
+  
   
   @media (max-width: 768px) {
     .left-column {
@@ -22,8 +26,8 @@
     .main-left {
         margin-top: none;
     }
-    .faq-answer {
-        text-align: center;
+    .left-column-answer {
+        margin-left: 50px;
     }
   }
   

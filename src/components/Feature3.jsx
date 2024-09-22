@@ -61,7 +61,7 @@ export default function Feature1() {
                     </div>
                   </button>
                   {activeIndex === index && (
-                    <p className="col-sm-10 faq-answer left-column" >{faq.answer}</p>
+                    <p className="col-sm-10  left-column-answer" >{faq.answer}</p>
                   )}
                 </div>
               ))}

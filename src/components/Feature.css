@@ -7,3 +7,12 @@
 .custom-img {
   object-fit: cover; /* Ensures the image maintains aspect ratio while covering */
 }
+.faq-answer {
+  margin-left: 50px;
+}
+@media (max-width: 768) {
+  .faq-answer {
+    text-align: start;
+    margin-left: none;
+  }
+}

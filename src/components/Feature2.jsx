@@ -13,16 +13,16 @@ export default function Feature() {
 
   const faqs = [
     {
-      question: '60% operational costs reduction',
-      answer: 'Go live 2x faster with 40% faster implementation. Avoid the need for coding or NLP training.'
+      question: 'Appointment booking and rescheduling',
+      answer: 'Automate booking and updation of appointments and lab tests. Free up healthcare agents for high-value tasks.'
     },
     {
-      question: 'Hassle-free system integration',
-      answer: 'Get 150+ pre-built templates with healthcare terms. Enable flexible integration with 80% containment out of the box.'
+      question: 'Human-like voice interactions',
+      answer: 'Tackle interruptions with empathy using voice AI agents, adept in active listening. Transfer complex queries to live agents.'
     },
     {
-      question: 'Data-driven decisions',
-      answer: 'Collect feedback with CSAT and NPS surveys. Help agents improve service with chat summaries via AI omnichannel agent inbox.'
+      question: 'Secure billing and payments',
+      answer: 'Streamline invoicing, billing, and reimbursements with smooth integration with existing payment solutions.'
     },
   ];
 
@@ -43,11 +43,11 @@ export default function Feature() {
           </div>
         </div>
         <div className="col-md-6 p-0">
-          <div className="row" style={{ marginTop: '150px' }}>
+          <div className="row" style={{ marginTop: '100px' }}>
             <div className="row">
               <div className="col-sm-6">
-                <h2>Go live 2x faster, make informed decisions</h2>
-                <p className="mt4">Stop building healthcare support agents from scratch, and digging data to make decisions. Deploy easy-to-use AI in seconds and improve performance by tracking metrics.</p>
+                <h2>Boost healthcare support efficiency with human-like empathy</h2>
+                <p className="mt4">Make high query volume handling effortless: Self-serve 90% of FAQs with accurate resolutions (having 1% hallucinations). Personalize interactions in 135+ languages.</p>
               </div>
             </div>
             <div className="row">
@@ -55,7 +55,7 @@ export default function Feature() {
                 {faqs.map((faq, index) => (
                   <div key={index}>
                     <button 
-                      className="row align-items-center btn mt-4 text-start fs-4 fw-bold faq-question" 
+                      className="row align-items-center btn text-start fs-6 fw-bold faq-question" 
                       onClick={() => toggleText(index)}
                     >
                       <div className="d-flex align-items-center">
@@ -70,7 +70,7 @@ export default function Feature() {
                       </div>
                     </button>
                     {activeIndex === index && (
-                      <p className="col-sm-10 faq-answer" style={{ marginLeft: '60px' }}>{faq.answer}</p>
+                      <p className="col-sm-10 faq-answer">{faq.answer}</p>
                     )}
                   </div>
                 ))}

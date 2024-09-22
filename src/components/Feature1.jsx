@@ -46,7 +46,7 @@ export default function Feature1() {
               {faqs.map((faq, index) => (
                 <div key={index}>
                   <button 
-                    className="row align-items-center btn text-start fs-4 fw-bold faq-question left-column" 
+                    className="row align-items-center btn text-start fs-6 fw-bold faq-question left-column" 
                     onClick={() => toggleText(index)}
                   >
                     <div className="d-flex align-items-center">

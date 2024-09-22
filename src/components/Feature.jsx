@@ -70,7 +70,7 @@ export default function Feature() {
                       </div>
                     </button>
                     {activeIndex === index && (
-                      <p className="col-sm-10 faq-answer" style={{ marginLeft: '60px' }}>{faq.answer}</p>
+                      <p className="col-sm-10 faq-answer">{faq.answer}</p>
                     )}
                   </div>
                 ))}
