@@ -5,7 +5,7 @@ import Magnumlogo from './assets/Magnumlogo.png';
 
 export default function MyComponent() {
   return (
-    <div className='container-fluid'>
+    <div className='container-fluid p-0'>
       <div className="row border-bottom" style={{ minHeight: '100px' }}>
         <div className="col-sm-4 d-flex justify-content-center align-items-center">
           <img src={Magnumlogo} alt="Magnum Logo" style={{ width: '150px' }} />

@@ -7,27 +7,54 @@
   .custom-img {
     object-fit: cover; /* Ensures the image maintains aspect ratio while covering */
   }
+  
   .left-column {
     margin-left: 200px;
   }
+  
   .main-left {
     margin-top: 50px;
   }
+  
   .left-column-answer {
     margin-left: 250px;
   }
-  
+ 
   
   @media (max-width: 768px) {
     .left-column {
       margin-left: 0;
       margin-right: 0;
     }
+  
     .main-left {
-        margin-top: none;
+      margin-top: 0;
     }
+  
     .left-column-answer {
-        margin-left: 50px;
+      margin-left: 50px;
+    }
+  }
+  
+  /* For screens smaller than 576px */
+  @media (max-width: 576px) {
+    .row.g-0 {
+      flex-direction: column; /* Stack the columns vertically */
+    }
+  
+    .col-sm-4 img {
+      width: 100%;       /* Make the image take full width */
+      height: auto;      /* Maintain aspect ratio */
+      margin: 0;         /* Remove unnecessary margins */
+      text-align: center;
+    }
+  
+    .col-sm-4 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;      /* Increase the container height */
+      margin-top: 20px;  /* Add spacing between text and image */
     }
   }
   

@@ -1,69 +1,86 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import './Footer.css';  // Import the CSS file
+import './Footer.css'; // Add your CSS or Bootstrap import here
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <div className="footer-container row">
-      <div className="col-sm-6 mx-auto">  {/* Reduced width by changing col-sm-8 to col-sm-6 */}
-        <div className="row mt-5">
-          <div className="col-sm-8">
-            <h1 className="text-light">August</h1>
-            <p className="by-beyond">by beyond</p>
-            <div className="address-box col-sm-6">
-              Address: 506/507, 1st Main Rd, Murugeshpalya, <br />
-              K R Garden, Bengaluru, Karnataka 560075
-            </div>
-
-            <div className="contact-info row">
-              <div className="contact-box col-sm-3">
-                +(91) 74831 27040
+    <div className="container-fluid mt-5 p-0">
+      {/* Footer */}
+      <footer className="text-center text-lg-start text-white" style={{ backgroundColor: '#929fba' }}>
+        {/* Grid container */}
+        <div className="container p-4 pb-0">
+          {/* Section: Links */}
+          <section className="">
+            {/*Grid row*/}
+            <div className="row">
+              {/* Grid column */}
+              <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h6 className="text-uppercase mb-4 font-weight-bold">MagnumAI</h6>
+                <p>
+                  Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit.
+                </p>
               </div>
-              <div className="contact-box col-sm-5">
-                contact@getbeyondhealth.com
+              {/* Grid column */}
+
+              <hr className="w-100 clearfix d-md-none" />
+
+              {/* Grid column */}
+              <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h6 className="text-uppercase mb-4 font-weight-bold">Products</h6>
+                <p>
+                  <a href="#!" className="text-white">BrandFlow</a>
+                </p>
+                <p>
+                  <a href="#!" className="text-white">Bootstrap Angular</a>
+                </p>
+              </div>
+
+              <hr className="w-100 clearfix d-md-none" />
+
+              {/* Grid column */}
+              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h6 className="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                <p><i className="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                <p><i className="fas fa-envelope mr-3"></i> info@gmail.com</p>
+                <p><i className="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                <p><i className="fas fa-print mr-3"></i> + 01 234 567 89</p>
+              </div>
+
+              {/* Grid column */}
+              <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h6 className="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+                {/* Social media links */}
+                <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#3b5998' }} href="#!" role="button">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#55acee' }} href="#!" role="button">
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#dd4b39' }} href="#!" role="button">
+                  <i className="fab fa-google"></i>
+                </a>
+                <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#ac2bac' }} href="#!" role="button">
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#0082ca' }} href="#!" role="button">
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
+                <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#333333' }} href="#!" role="button">
+                  <i className="fab fa-github"></i>
+                </a>
               </div>
             </div>
-          </div>
-
-          <div className="col-sm-4">
-            <button className="talk-btn">Talk to August</button>
-            <p className="disclaimer">
-              Disclaimer: August is a health information platform and its responses don't constitute medical advice. <br />
-              Always consult with a licensed medical professional near you before making any changes.
-            </p>
-          </div>
+          </section>
         </div>
-        <div className="row social-section mt-4">
-          <div className="col">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faTwitter} size="2x" className="text-light" />
-            </a>
-          </div>
-          <div className="col">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faInstagram} size="2x" className="text-light" />
-            </a>
-          </div>
+        {/* Copyright */}
+        <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+          © 2020 Copyright:
+          <a className="text-white" href="https://mdbootstrap.com/"> MDBootstrap.com</a>
         </div>
-
-
-
-        <div className="row text-start text-white mt-4">
-        <div className="col-sm-8 center-text">
-          <p>Made In India, for the world.</p>
-        </div>
-
-          <div className="col-sm-4 text-end terms-privacy">
-            <span>Term</span>
-            <span>Privacy</span>
-          </div>
-        </div>
-
-        <div className="row developer-info mt-4 text-center text-light">
-          <p>Developed by <a href="https://www.linkedin.com/in/nilesh-kushwaha-3bb154266/" target="_blank" rel="noopener noreferrer">Nilesh Kushwaha</a></p>
-        </div>
-      </div>
+      </footer>
     </div>
   );
-}
+};
+
+export default Footer;

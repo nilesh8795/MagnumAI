@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid p-0 m-0">
       <Navbar/>
       <Home/>
       <Feature/>

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Feature1.css';
 
-export default function Feature1() {
+export default function Feature() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const images = [
@@ -13,16 +12,16 @@ export default function Feature1() {
 
   const faqs = [
     {
-      question: 'Seamless patient onboarding',
-      answer: 'Automate the registration, verification, and new account creation of patients..'
+      question: 'Appointment booking and rescheduling',
+      answer: 'Automate booking and updation of appointments and lab tests. Free up healthcare agents for high-value tasks.'
     },
     {
-      question: 'Proactive alerts and suggestions',
-      answer: 'Share medication reminders and preventive care, nutrition, and health tips based on previous chat history and test results.'
+      question: 'Human-like voice interactions',
+      answer: 'Tackle interruptions with empathy using voice AI agents, adept in active listening. Transfer complex queries to live agents.'
     },
     {
-      question: 'Post-consultation summary and lab results',
-      answer: 'Send a digital summary of prescription, diagnosis, and lab reports on the channel of patients’ choice.'
+      question: 'Secure billing and payments',
+      answer: 'Streamline invoicing, billing, and reimbursements with smooth integration with existing payment solutions.'
     },
   ];
 
@@ -31,25 +30,39 @@ export default function Feature1() {
   };
 
   return (
-    <div className="container-fluid p-0 m-0" style={{ maxHeight: '80vh', backgroundColor: '#A5B4FC' }}>
-      <div className="row g-0">
-        {/* First column: Text */}
-        <div className="col-md-6 p-0 main-left">
-          <div className="row ">
-            <div className="col-sm-8">
-              <h2 className='left-column'>Win patient loyalty with connected healthcare journeys</h2>
-              <p className="mt4 left-column">Prevent patient churns. Help them find nearby clinics, book virtual consultations, and enable post-consultation follow-ups, capturing context across 35+ channels.</p>
-            </div>
+    <div className="container-fluid p-0 m-0">
+      <div className="row g-0" style={{backgroundColor: '#A5B4FC'}}>
+
+        {/* Left Column (Image) - Swapped to top on small screens */}
+        <div className="col-md-6 d-flex align-items-end order-md-last order-first p-0" style={{marginBottom: '40px'}}>
+          <div className="col-md-8 ms-auto d-md-flex d-block justify-content-end">
+            <img 
+              src={activeIndex !== null ? images[activeIndex] : images[0]} 
+              alt="Feature"
+              className="img-fluid"
+              style={{ maxWidth: '100%', maxHeight: 'auto' }}
+            />
           </div>
-          <div className="row">
-            <div className="col-sm-8">
+        </div>
+
+        {/* Right Column (Text) - Swapped to bottom on small screens */}
+        <div className="col-md-6 p-0 order-md-first order-last">
+          <div className="row f-reverse">
+            <div className="col-sm-6">
+              <h2>Boost healthcare support efficiency with human-like empathy</h2>
+              <p className="mt-4">
+                Make high query volume handling effortless: Self-serve 90% of FAQs with accurate resolutions (having 1% hallucinations). 
+                Personalize interactions in 135+ languages.
+              </p>
+            </div>
+            <div className="col-sm-8 mt-3">
               {faqs.map((faq, index) => (
-                <div key={index}>
+                <div key={index} className="mb-2">
                   <button 
-                    className="row align-items-center btn text-start fs-6 fw-bold faq-question left-column" 
+                    className="btn btn-outline-light d-flex align-items-center w-100 text-start fs-6 fw-bold" 
                     onClick={() => toggleText(index)}
                   >
-                    <div className="d-flex align-items-center">
+                    <div className="d-flex align-items-center my-2" style={{border: 'none'}}>
                       <img
                         src={activeIndex === index 
                           ? 'https://cdn-icons-png.flaticon.com/512/262/262039.png' 
@@ -57,26 +70,15 @@ export default function Feature1() {
                         alt={activeIndex === index ? 'Minus icon' : 'Plus icon'}
                         style={{ width: '24px', height: '24px', marginRight: '10px' }}
                       />
-                      <span className="question" style={{ background: 'none' }}>{faq.question}</span>
+                      <span>{faq.question}</span>
                     </div>
                   </button>
                   {activeIndex === index && (
-                    <p className="col-sm-10 faq-answer main-left"  >{faq.answer}</p>
+                    <p className="faq-answer ms-5 text-sm-start">{faq.answer}</p> 
                   )}
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-        
-        {/* Second column: Image */}
-        <div className="col-sm-4">
-          <div className="col-md-8 p-0 d-flex justify-content-center align-items-center" style={{ height: '80vh' }}>
-            <img 
-              src={activeIndex !== null ? images[activeIndex] : images[0]} 
-              alt="Feature"
-              style={{ width: '100%', height: 'auto', maxWidth: '100%', marginTop: '50px', marginLeft: '100%' }}
-            />
           </div>
         </div>
       </div>

@@ -1,29 +1,32 @@
 /* Global Styles */
 .container-fluid {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  
-  .custom-img {
-    object-fit: cover; /* Ensures the image maintains aspect ratio while covering */
-  }
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.custom-img {
+  object-fit: cover; /* Ensures the image maintains aspect ratio while covering */
+}
+.left-column {
+  margin-left: 200px;
+}
+.main-left {
+  margin-top: 50px;
+}
+.left-column-answer {
+  margin-left: 250px;
+}
+
+
+@media (max-width: 768px) {
   .left-column {
-    margin-left: 200px;
+    margin-left: 0;
+    margin-right: 0;
   }
-  
-  @media (max-width: 768px) {
-    .left-column {
-      margin-left: 0;
-      margin-right: 0;
-    }
-    .fab-question {
-        padding: 0%;
-    }
-    .faq-answer {
-    
-    }
-    .main-left {
-        font-size: small;
-    }
+  .main-left {
+      margin-top: none;
   }
-  
+  .left-column-answer {
+      margin-left: 50px;
+  }
+}
