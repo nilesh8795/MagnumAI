@@ -1,0 +1,11 @@
+.f-reverse {
+    margin-left: 200px;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .f-reverse {
+        margin-left: 0; /* No margin on smaller screens */
+        margin-top: 0;
+    }
+}

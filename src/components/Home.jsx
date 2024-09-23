@@ -1,12 +1,25 @@
-import React from 'react';
-import { CloudinaryContext, Video } from 'cloudinary-react'; // Removed Image as it's not used for external URLs
+import React, { useRef } from 'react';
+import { CloudinaryContext } from 'cloudinary-react'; // Removed Video as we are using native video tag
 import './Home.css';
 import 'animate.css';
 
 export default function Home() {
+  const videoRef = useRef(null);
+
+  // Function to handle video play/pause on tap
+  const handleVideoTap = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  };
+
   return (
     <CloudinaryContext cloudName="dcx4eh4kv">
-      <div className="container-fluid col-sm-12 home-content" style={{ marginTop: '100px' }}>
+      <div className="container-fluid col-sm-12 home-content" style={{ marginTop: '100px', borderBottom: '1px solid #dee2e6' }}>
         <div className="col-sm-10" style={{ margin: 'auto' }}>
           <div className="row align-items-center" style={{ marginTop: '150px', margin: 'auto' }}>
             {/* Left Column */}
@@ -21,7 +34,6 @@ export default function Home() {
             {/* Right Column */}
             <div className="col-md-6 text-center text-md-end" style={{ marginTop: '50px' }}>
               <div className="row">
-                {/* Replaced Image component with a standard img tag for external URL */}
                 <img
                   src="https://framerusercontent.com/images/nGcJ6ehPV480HX0NhIEWmaNP4.png?scale-down-to=1024"
                   className="img-fluid"
@@ -44,21 +56,35 @@ export default function Home() {
           </div>
 
           {/* Video Section */}
-          <div className="row video-section" style={{ marginTop: '150px', marginBottom: '50px' }}>
-              <div className="col-12 d-flex justify-content-center">
-                <Video
-                  publicId="lx7pwmv5smwkqfgll8nn" // Replace with your video public ID
-                  autoPlay
-                  style={{
-                    borderRadius: '15px', // This is for rounded corners
-                    width: '100%',
-                    maxWidth: '800px',
-                    height: 'auto',
-                    border: '1px solid #A5B4FC' // Correct way to apply a border
-                  }}
+          <div className="row video-section" style={{ marginTop: '150px' }}>
+            <div className="col-12 d-flex justify-content-center">
+              <video
+                ref={videoRef}
+                onClick={handleVideoTap}
+                autoPlay
+                loop
+                muted
+                style={{
+                  borderRadius: '15px 15px 0px 0px', // For rounded top corners
+                  width: '100%',
+                  maxWidth: '800px',
+                  height: 'auto',
+                  borderTop: '1px solid #dee2e6', // Top border
+                  borderLeft: '1px solid #dee2e6', // Left border
+                  borderRight: '1px solid #dee2e6', // Right border
+                  borderBottom: 'none', // No bottom border
+                  boxShadow: '5px -5px 10px #dee2e6, -5px -5px 10px #dee2e6', // Shadow on top, left, and right
+                  position: 'relative',
+                }}
+              >
+                <source
+                  src="https://res.cloudinary.com/dcx4eh4kv/video/upload/lx7pwmv5smwkqfgll8nn"
+                  type="video/mp4"
                 />
-              </div>
+                Your browser does not support the video tag.
+              </video>
             </div>
+          </div>
         </div>
       </div>
     </CloudinaryContext>

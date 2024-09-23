@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Feature.css'
 
 export default function Feature() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -34,8 +35,8 @@ export default function Feature() {
       <div className="row g-0" style={{backgroundColor: '#A5B4FC'}}>
 
         {/* Left Column (Image) - Swapped to top on small screens */}
-        <div className="col-md-6 d-flex align-items-end order-md-last order-first p-0" style={{marginBottom: '40px'}}>
-          <div className="col-md-8 ms-auto d-md-flex d-block justify-content-end">
+        <div className="col-md-6 d-flex align-items-end order-md-last order-first p-0" >
+          <div className="col-md-8 ms-auto d-md-flex d-block justify-content-end mt-3">
             <img 
               src={activeIndex !== null ? images[activeIndex] : images[0]} 
               alt="Feature"
@@ -46,8 +47,8 @@ export default function Feature() {
         </div>
 
         {/* Right Column (Text) - Swapped to bottom on small screens */}
-        <div className="col-md-6 p-0 order-md-first order-last">
-          <div className="row f-reverse">
+        <div className="col-md-6 p-0 order-md-first order-last mt-3">
+          <div className="row f-reverse" >
             <div className="col-sm-6">
               <h2>Boost healthcare support efficiency with human-like empathy</h2>
               <p className="mt-4">
