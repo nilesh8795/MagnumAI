@@ -1,11 +1,11 @@
 import React from 'react';
-import { CloudinaryContext, Image, Video } from 'cloudinary-react';
+import { CloudinaryContext, Video } from 'cloudinary-react'; // Removed Image as it's not used for external URLs
 import './Home.css';
 import 'animate.css';
 
 export default function Home() {
   return (
-    <CloudinaryContext cloudName="your_cloud_name">
+    <CloudinaryContext cloudName="dcx4eh4kv">
       <div className="container-fluid col-sm-12 home-content" style={{ marginTop: '100px' }}>
         <div className="col-sm-10" style={{ margin: 'auto' }}>
           <div className="row align-items-center" style={{ marginTop: '150px', margin: 'auto' }}>
@@ -21,8 +21,9 @@ export default function Home() {
             {/* Right Column */}
             <div className="col-md-6 text-center text-md-end" style={{ marginTop: '50px' }}>
               <div className="row">
-                <Image
-                  publicId="your_image_public_id" // Replace with your image public ID
+                {/* Replaced Image component with a standard img tag for external URL */}
+                <img
+                  src="https://framerusercontent.com/images/nGcJ6ehPV480HX0NhIEWmaNP4.png?scale-down-to=1024"
                   className="img-fluid"
                   alt="AI Assistant"
                 />
@@ -44,16 +45,20 @@ export default function Home() {
 
           {/* Video Section */}
           <div className="row video-section" style={{ marginTop: '150px', marginBottom: '50px' }}>
-            <div className="col-12 d-flex justify-content-center">
-              <Video
-                publicId="lx7pwmv5smwkqfgll8nn" // Replace with your video public ID
-                controls
-                autoPlay
-                muted
-                style={{ borderRadius: '15px' }}
-              />
+              <div className="col-12 d-flex justify-content-center">
+                <Video
+                  publicId="lx7pwmv5smwkqfgll8nn" // Replace with your video public ID
+                  autoPlay
+                  style={{
+                    borderRadius: '15px', // This is for rounded corners
+                    width: '100%',
+                    maxWidth: '800px',
+                    height: 'auto',
+                    border: '1px solid #A5B4FC' // Correct way to apply a border
+                  }}
+                />
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </CloudinaryContext>
